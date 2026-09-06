@@ -33,7 +33,7 @@ def criar_ficha(ficha: Ficha) -> None:
         )
 
 
-def buscar_ficha(user_id: int) -> Ficha | None:
+def get_ficha(user_id: int) -> Ficha | None:
     with get_connection() as connection:
         row = connection.execute(
             "SELECT * FROM fichas WHERE user_id = ?", (user_id,)
